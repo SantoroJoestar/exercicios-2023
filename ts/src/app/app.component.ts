@@ -23,18 +23,31 @@ export class AppComponent {
   showTopicSendAndBlur() {
     this.showTopicSend();
     this.showBlur();
+    this.hideTopic();
   }
 
   showTopicSend() {
     const topicSend = document.getElementById('topic-send') as HTMLElement;
     const botao = document.querySelector('.button-topic') as HTMLButtonElement;
+    const topic = document.querySelector('.topic') as HTMLElement;
 
     if (topicSend.style.display === 'none' || topicSend.style.display === '') {
       topicSend.style.display = 'block';
+      topic.style.display = 'block';
     } else {
       topicSend.style.display = 'none';
+      topic.style.display = 'none';
     }
 
+  }
+
+  hideTopic() {
+    const topic = document.querySelector('.topic') as HTMLElement;
+    const form = document.getElementById('form') as HTMLElement;
+    const buttonCreateTopic = document.getElementById('btn-create-topic') as HTMLElement;
+    topic.style.display = 'none';
+    form.style.display = 'none';
+    buttonCreateTopic.style.display = 'block';
   }
 
   showBlur() {
@@ -57,15 +70,21 @@ export class AppComponent {
   showForm() {
     console.log("EXIBINDO FORMULÁRIO")
 
-    const form = document.getElementById('formulario') as HTMLElement;
+    const form = document.getElementById('form') as HTMLElement;
+    const topic = document.querySelector('.topic') as HTMLElement;
+    const topicSend = document.getElementById('topic-send') as HTMLElement;
+    const blur = document.getElementById('blur') as HTMLElement;
     const botaoForm = document.querySelector('.btn-create-topic') as HTMLButtonElement;
 
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
-      botaoForm.innerText = 'Fechar tópico'
+      topic.style.display = 'none';
+      topicSend.style.display = 'none';
+      blur.style.display = 'none';
     } else {
       form.style.display = 'none';
-      botaoForm.innerText = 'Criar tópico'
+      topic.style.display = 'block';
+
     }
   }
 

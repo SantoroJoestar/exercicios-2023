@@ -1,10 +1,10 @@
 <div class="container">
 
   <aside class="sidebar">
-    <div class="eventName">
-      <h2>
+    <div class="event-name">
+      <p>
         SLACA 2019
-      </h2>
+      </p>
     </div>
 
     <img src="assets/dewey 4.png" alt="logo slaca" class="slaca-logo">
@@ -13,7 +13,7 @@
         <span>Apresentação</span>
       </li>
       <li>
-        <span>Comitês</span>
+        <span>Comitês</span>s
       </li>
       <li>
         <span>Autores</span>
@@ -88,9 +88,9 @@
             <img src="assets/video_layout.png" alt="fundo de vídeo">
           </div>
           <article class="panel" id="details">
-            <h2 class="panel-header">
+            <p class="panel-header">
               Detalhes
-            </h2>
+            </p>
             <div class="panel-body">
 
               Tipo de Apresentação: <b>Pôster</b>
@@ -126,9 +126,9 @@
 
       <article class="panel" id="resume">
 
-        <h2 class="panel-header">
+        <p class="panel-header">
           Resumo
-        </h2>
+        </p>
         <div class="panel-body btn-show-more">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere dolor ante, in lobortis
@@ -190,16 +190,16 @@
               luctus massa. Quisque accumsan erat ut lectus faucibus sodales. Sed auctor ex ut odio lobortis,
               vitae
               vulputate est dapibus. Maecenas vitae ligula eu quam sodales iaculis eu vitae sem.</span>
-            <button class="btn-show-more show-more" (click)="toggleText()">ver mais</button>
+            <a class="btn-show-more show-more" (click)="toggleText()">ver mais</a>
         </div>
 
       </article>
 
 
       <article class="panel" id="discussions">
-        <h2 class="panel-header">
+        <p class="panel-header">
           Discussões
-        </h2>
+        </p>
 
         <div class="panel-body">
           <section class="topic">
@@ -220,21 +220,20 @@
               </p>
             </div>
             <div class="add-topic">
-
               <img class="line" src="assets/line.svg" alt="linha de divisão">
-              <button class="btn-create-topic" (click)="showForm()">
+
+              <a class="btn-create-topic" id="btn-topic-create" (click)="showForm()">
                 <img src="./assets/plus.svg" alt="">
                 <span>criar tópico</span>
-              </button>
+              </a>
             </div>
           </section>
 
-          <section id="formulario" style="display: none;">
+          <section id="form" style="display: none;">
             <h3 class="topic-title primary topic-text">
               Tem uma dúvida ou sugestão? Compartilhe seu feedaback com os autores!
             </h3>
             <div>
-
               <form method="post">
                 <div class="topic-subject comments-container">
                   <p class="topic-title">
@@ -272,6 +271,11 @@
                 seu tópico for respondido!
               </p>
 
+              <a class="btn-topic-new" (click)="showForm()">
+                <img src="./assets/plus.svg" alt="">
+                <span>Criar novo tópico</span>
+              </a>
+
               <p class="topic-send-link">Descubra outros trabalhos</p>
             </div>
             <div class="add-topic">
@@ -305,12 +309,12 @@
                 </p>
               </div>
               <div class="card-footer">
-                <button class="icon-button">
+                <a class="icon-button">
                   <img src="./assets/more_info.svg" />
-                </button>
-                <button class="icon-button primary">
+                </a>
+                <a class="icon-button primary">
                   <img src="./assets/heart.png" />
-                </button>
+                </a>
                 <span>4 likes</span>
                 <span>4 respostas</span>
               </div>
@@ -336,12 +340,12 @@
                 </p>
               </div>
               <div class="card-footer">
-                <button class="icon-button">
+                <a class="icon-button">
                   <img src="./assets/more_info.svg" />
-                </button>
-                <button class="icon-button primary">
+                </a>
+                <a class="icon-button primary">
                   <img src="./assets/heart.png" />
-                </button>
+                </a>
                 <span>4 likes</span>
                 <span>4 respostas</span>
               </div>
