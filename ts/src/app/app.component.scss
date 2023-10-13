@@ -462,21 +462,21 @@ input[type="text"] {
   color: #FFF;
   border: none;
   cursor: pointer;
-  margin-left: 71.6em;
-  margin-top: 113.8rem;
+  margin-left: 72rem;
+  margin-top: 0rem;
 }
 
 .button-topic:hover {
   background: #FEB154;
 }
 
-.topic-send {
+#topic-send {
   display: none;
   flex-direction: column;
   gap: 1em;
 }
 
-.blur {
+#blur {
   display: none;
 }
 
@@ -586,6 +586,10 @@ input[type="text"] {
   padding: 0.3rem;
   border: transparent;
   margin-right: -2rem;
+}
+
+#mais {
+  display: none;
 }
 
 .topic-text {

@@ -162,38 +162,37 @@
             massa.
             Nunc molestie mollis massa in rhoncus. Integer egestas enim libero, vel luctus neque ultricies
             et.
-            Sed
-            ullamcorper, urna in ultricies porttitor, nisl augue malesuada mi, a luctus elit felis ultricies
-            turpis.
-            Pellentesque felis tellus, blandit eu interdum eu, vulputate id urna. Quisque lacinia metus in
-            lorem
-            congue, vel pellentesque ex aliquet. Aliquam rutrum justo vel turpis vulputate pulvinar.
-            <br>
-            <br>
-            Integer justo nisl, aliquam at faucibus convallis, ultrices vel tortor. Sed malesuada rutrum
-            elit,
-            quis
-            malesuada enim tincidunt quis. Pellentesque ac urna vel odio efficitur aliquet. Aenean vitae
-            eros
-            rutrum, pretium justo quis, porta metus. Sed arcu urna, congue et nunc ut, gravida posuere
-            felis.
-            Sed
-            nec maximus arcu. Suspendisse id purus luctus, ornare dui nec, malesuada nulla. Nam imperdiet
-            enim
-            id
-            nunc cursus, eu lobortis dolor volutpat. Morbi ligula risus, placerat vitae tortor a,
-            condimentum
-            scelerisque nibh. Vivamus scelerisque diam ut nisi fringilla finibus. Sed iaculis lorem est, a
-            tempor
-            tortor vestibulum in. Nulla mattis vulputate imperdiet. Nunc non erat convallis, condimentum
-            nibh a,
-            luctus massa. Quisque accumsan erat ut lectus faucibus sodales. Sed auctor ex ut odio lobortis,
-            vitae
-            vulputate est dapibus. Maecenas vitae ligula eu quam sodales iaculis eu vitae sem.
-
-            <button class="btn-show-more show-more">ver mais</button>
-          </p>
+            Sed<span id="mais" style="display: none;">
+              ullamcorper, urna in ultricies porttitor, nisl augue malesuada mi, a luctus elit felis ultricies
+              turpis.
+              Pellentesque felis tellus, blandit eu interdum eu, vulputate id urna. Quisque lacinia metus in
+              lorem
+              congue, vel pellentesque ex aliquet. Aliquam rutrum justo vel turpis vulputate pulvinar.
+              <br>
+              <br>
+              Integer justo nisl, aliquam at faucibus convallis, ultrices vel tortor. Sed malesuada rutrum
+              elit,
+              quis
+              malesuada enim tincidunt quis. Pellentesque ac urna vel odio efficitur aliquet. Aenean vitae
+              eros
+              rutrum, pretium justo quis, porta metus. Sed arcu urna, congue et nunc ut, gravida posuere
+              felis.
+              Sed
+              nec maximus arcu. Suspendisse id purus luctus, ornare dui nec, malesuada nulla. Nam imperdiet
+              enim
+              id
+              nunc cursus, eu lobortis dolor volutpat. Morbi ligula risus, placerat vitae tortor a,
+              condimentum
+              scelerisque nibh. Vivamus scelerisque diam ut nisi fringilla finibus. Sed iaculis lorem est, a
+              tempor
+              tortor vestibulum in. Nulla mattis vulputate imperdiet. Nunc non erat convallis, condimentum
+              nibh a,
+              luctus massa. Quisque accumsan erat ut lectus faucibus sodales. Sed auctor ex ut odio lobortis,
+              vitae
+              vulputate est dapibus. Maecenas vitae ligula eu quam sodales iaculis eu vitae sem.</span>
+            <button class="btn-show-more show-more" (click)="toggleText()">ver mais</button>
         </div>
+
       </article>
 
 
@@ -223,9 +222,9 @@
             <div class="add-topic">
 
               <img class="line" src="assets/line.svg" alt="linha de divisão">
-              <button class="btn-create-topic">
+              <button class="btn-create-topic" (click)="showForm()">
                 <img src="./assets/plus.svg" alt="">
-                <span class="btn-create-topic">criar tópico</span>
+                <span>criar tópico</span>
               </button>
             </div>
           </section>
@@ -236,24 +235,24 @@
             </h3>
             <div>
 
-              <div class="topic-subject comments-container">
-                <p class="topic-title">
-                  Assunto
-                </p>
-                <p class="topic-field">
-                  Defina um tópico sucinto para notificar os autores...
-                </p>
-              </div>
-
-              <p class="topic-content">
-                Conteúdo
-              </p>
-              <div class="textbox-container">
-
-                <div class="textbox-final">
-                  <button type="button" class="button-topic btn-create-topic">Enviar</button>
+              <form method="post">
+                <div class="topic-subject comments-container">
+                  <p class="topic-title">
+                    Assunto
+                  </p>
+                  <input type="text" class="topic-field subject" name="assunto" placeholder="Defina um tópico sucinto para notificar os autores...">
                 </div>
-              </div>
+
+                <p class="topic-content">
+                  Conteúdo
+                </p>
+                <div class="textbox-container">
+                  <div class="textbox-final">
+                    <button type="button" class="button-topic" (click)="showTopicSendAndBlur()">Enviar</button>
+                  </div>
+                </div>
+              </form>
+
             </div>
             <div class="add-topic">
               <img class="line" src="assets/line.svg" alt="linha de divisão">
@@ -261,7 +260,7 @@
 
           </section>
 
-          <section class="topic-send">
+          <section id="topic-send">
 
             <h3 class="topic-send-title">
               Seu tópico foi enviado com sucesso! :D
@@ -278,29 +277,27 @@
             <div class="add-topic">
 
               <img class="line" src="assets/line.svg" alt="linha de divisão">
-              <button class="btn-create-new-topic">
 
-                <span>Criar novo tópico</span>
-              </button>
+
             </div>
 
           </section>
           <section class="discussions">
             <div class="card">
-
-              <div class="blur">
+              <div id="blur">
                 <img src="assets/enviado.png" alt="blur de enviado">
                 <p>Aguardando feedback dos autores</p>
               </div>
-              <div class="card-header ops-topic-subject">
-                <p class="card-title ops-topic-subject">
+
+              <div class="card-header">
+                <p class="card-title">
                   Assunto da pergunta aparece aqui
                 </p>
-                <p class="card-subtitle ops-topic-subject">
+                <p class="card-subtitle">
                   Carlos Henrique Santos
                 </p>
               </div>
-              <div class="card-body ops-topic-subject">
+              <div class="card-body">
                 <p>
                   Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da
                   dimensão e impacto de
@@ -322,17 +319,17 @@
             <div class="answered-topics-questions">
 
             </div>
-            <div class="card ops-topic-subject">
+            <div class="card answered-topic  ops-topic-subject">
               <div class="card-header">
-                <p class="card-title ops-topic-subject">
+                <p class="card-title">
                   Assunto da pergunta aparece aqui
                 </p>
-                <p class="card-subtitle ops-topic-subject">
+                <p class="card-subtitle">
                   Carlos Henrique Santos
                 </p>
               </div>
-              <div class="card-body">
-                <p>
+              <div class="card-body answered-topic ops-topic-subject">
+                <p class="answered-topic" (click)="validateForm()">
                   Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da
                   dimensão e impacto de
                   processo formativo situado impacto de processo formativo processo...
@@ -352,12 +349,12 @@
             </div>
 
             <div class="answered-topics-questions">
-              <div class="card-answered answered-topic">
-                <p class="card-answered-name answered-topic">
+              <div class="card-answered answered-topic comments-container">
+                <p class="card-answered-name answered-topic comments-container">
                   Adriano da Silva
                 </p>
 
-                <p class="card-answered-text answered-topic">
+                <p class="card-answered-text answered-topic comments-container">
                   Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto
                   de processo formativo situado impacto de processo formativo processo resente relato
                   inscreve-se no campo da análise da dimensão e impacto de processo formativo situado
@@ -366,12 +363,12 @@
 
               </div>
 
-              <div class="card-answered-two">
-                <p class="card-answered-name">
+              <div class="card-answered-two comments-container">
+                <p class="card-answered-name comments-container">
                   Carlos Henrique Santos
                 </p>
 
-                <p class="card-answered-text">
+                <p class="card-answered-text comments-container">
                   Consegui entender melhor agora! Parece que a variação da análise da dimensão e impacto
                   de processo formativo situado impacto de processo formativo.
                   <br>
@@ -382,12 +379,12 @@
 
               </div>
 
-              <div class="card-answered-three answered-topic">
-                <p class="card-answered-name answered-topic">
+              <div class="card-answered-three answered-topic comments-container">
+                <p class="card-answered-name answered-topic comments-container">
                   Carmila Ferreira Andrade
                 </p>
 
-                <p class="card-answered-text answered-topic">
+                <p class="card-answered-text answered-topic comments-container">
                   Também ínteressante lembrar que o relato inscreve-se no campo da análise da dimensão e
                   impacto de processo formativo situado impacto de processo formativo processo resente
                   relato inscreve-se no campo da análise da dimensão e impacto de processo formativo
@@ -401,12 +398,12 @@
 
               </div>
 
-              <div class="card-answered-fourth answered-topic">
-                <p class="card-answered-name answered-topic">
+              <div class="card-answered-fourth answered-topic comments-container">
+                <p class="card-answered-name answered-topic comments-container">
                   Ana Carolina
                 </p>
 
-                <p class="card-answered-text answered-topic">
+                <p class="card-answered-text answered-topic comments-container">
                   Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto
                   de processo formativo situado impacto de processo formativo processo resente relato
                   inscreve-se no campo da análise da dimensão e impacto de processo formativo situado
