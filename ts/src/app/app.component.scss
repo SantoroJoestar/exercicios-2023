@@ -116,14 +116,14 @@ main {
   display: flex;
   padding: 0.3rem;
   align-items: center;
-  width: 87%;
+  width: 88.25%;
   height: 4.25rem;
   padding: 0.3rem 2.25rem;
   background: #FDF1EB;
   box-sizing: border-box;
   gap: 2.5rem;
   margin-left: 14rem;
-  margin-top: -52.9rem;
+  margin-top: -57rem;
 
   .header-text {
     flex-grow: 1;
@@ -174,7 +174,7 @@ main {
   .profile {
     display: flex;
     font-family: Quicksand;
-
+    margin-right: 2rem;
     .profile-text {
       text-align: right;
       font-size: 0.75rem;
@@ -246,6 +246,7 @@ main {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        margin-right: 2rem;
 
         div {
           display: flex;
@@ -303,14 +304,18 @@ main {
   line-height: 1.5625rem;
   letter-spacing: 0.04375rem;
 }
+ .panel-details {
+    width: 96%;
+ }
 
 .panel {
   border-radius: 0.1875rem;
   border: 1px solid #ECECEC;
+  width: 98%;
 
   .panel-header {
     display: flex;
-    padding: 0.2rem 0rem 0.2rem 0.8rem;
+    padding: 1rem 0rem 1rem 0.8rem;
     flex-direction: column;
     justify-content: center;
     color: #4E4E4E;
@@ -321,6 +326,7 @@ main {
     border-radius: 0.1875rem 0.1875rem 0rem 0rem;
     border: 1px solid #ECECEC;
     background: #FDF1EB;
+    font-size: 1.6rem;
 
     b {
       color: black;
@@ -339,19 +345,25 @@ main {
   }
 
 
-  #details {
+
     .autors {
       font-weight: 400;
     }
 
+
+
     .institutes {
       color: #ADA0A0;
-      font-size: 0.75rem;
+      font-size: 1rem;
       font-weight: 400;
-      line-height: 0.75rem;
+      line-height: 1.5rem;
       letter-spacing: 0.015rem;
     }
-  }
+
+    .institutes p {
+      color: #ADA0A0;
+    }
+
 
 }
 
@@ -519,17 +531,41 @@ input[type="text"] {
 
 }
 
+.card-answerad-name-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: -3rem;
+  gap: 1rem;
+  margin-right: 3rem;
+
+}
+
+.card-answerad-name-header p {
+  color: #ED7839;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 17.5px;
+  font-family: 'Quicksand', 'sans-serif';
+}
+
 #blur {
+  display: none;
+}
+
+.blur{
+  height: 12rem;
+  width: 97.2rem;
+  margin-left: -0.7rem;
+}
+
+.blur p {
   display: none;
 }
 
 .answered-topics-questions {
   display: none;
 }
-
-
-
-
 
 .btn-create-new-topic {
   display: flex;
@@ -707,7 +743,9 @@ input[type="text"] {
 
 .content-footer {
   padding-left: 15rem;
+
 }
+
 
 .card-answered {
   display: flex;

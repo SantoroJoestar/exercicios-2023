@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'DevChuva';
+
+  ngAfterViewInit(){
+   this.validateForm();
+  }
 
   // Função para alternar a visibilidade do texto
   toggleText() {
@@ -38,43 +42,40 @@ export class AppComponent {
       topicSend.style.display = 'none';
       topic.style.display = 'none';
     }
-
   }
 
   hideTopic() {
     const topic = document.querySelector('.topic') as HTMLElement;
     const form = document.getElementById('form') as HTMLElement;
-    const buttonCreateTopic = document.getElementById('btn-create-topic') as HTMLElement;
+    const buttonCreateTopic = document.getElementById(
+      'btn-create-topic'
+    ) as HTMLElement;
     topic.style.display = 'none';
     form.style.display = 'none';
     buttonCreateTopic.style.display = 'block';
   }
 
   showBlur() {
-
-   console.log("entrei na show blur")
     const blur = document.getElementById('blur') as HTMLElement;
     const botao = document.querySelector('.button-topic') as HTMLButtonElement;
 
     if (blur.style.display === 'none' || blur.style.display === '') {
-      console.log("Entrei no primeiro if")
+      console.log('Entrei no primeiro if');
       blur.style.display = 'block';
     } else {
-      console.log("entrei no else")
+      console.log('entrei no else');
       blur.style.display = 'none';
     }
-
-    console.log("sai da show blur")
   }
 
   showForm() {
-    console.log("EXIBINDO FORMULÁRIO")
-
     const form = document.getElementById('form') as HTMLElement;
     const topic = document.querySelector('.topic') as HTMLElement;
     const topicSend = document.getElementById('topic-send') as HTMLElement;
     const blur = document.getElementById('blur') as HTMLElement;
-    const botaoForm = document.querySelector('.btn-create-topic') as HTMLButtonElement;
+    const botaoForm = document.querySelector(
+      '.btn-create-topic'
+    ) as HTMLButtonElement;
 
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
@@ -84,21 +85,25 @@ export class AppComponent {
     } else {
       form.style.display = 'none';
       topic.style.display = 'block';
-
     }
   }
 
   validateForm() {
-
     const subjectElements = document.querySelectorAll('.ops-topic-subject');
-
     subjectElements.forEach(function (subjectElement) {
-      subjectElement.addEventListener('click', function () {
-        console.log("TESTANDO TESTANDO TESTANDO");
+      subjectElement.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log('TESTANDO TESTANDO TESTANDO');
         const divAnswereds = subjectElement.nextElementSibling as HTMLElement;
 
-        if (divAnswereds && divAnswereds.classList.contains('answered-topics-questions')) {
-          if (divAnswereds.style.display === 'none' || divAnswereds.style.display === '') {
+        if (
+          divAnswereds &&
+          divAnswereds.classList.contains('answered-topics-questions')
+        ) {
+          if (
+            divAnswereds.style.display === 'none' ||
+            divAnswereds.style.display === ''
+          ) {
             divAnswereds.style.display = 'block';
           } else {
             divAnswereds.style.display = 'none';
@@ -106,8 +111,5 @@ export class AppComponent {
         }
       });
     });
-
-
   }
-
 }
