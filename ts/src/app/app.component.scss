@@ -396,17 +396,28 @@ main {
   }
 }
 
+.topic-send-button {
+  display: block;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  margin-left: 42rem;
+  font-weight: 700;
+}
+
 .btn-topic-new{
 
   width: 12.819rem;
   height: 1.9375rem;
-  padding: 0.3rem;
+  padding: 0.8rem;
   gap: 1rem;
   border-radius: 0.5rem;
   background: linear-gradient(180deg, #FEB154 0%, #F1833E 100%);
   color: #FFF;
   border: none;
   cursor: pointer;
+
 }
 
 .btn-new-topic-create {
@@ -523,12 +534,19 @@ input[type="text"] {
       font-weight: 500;
       line-height: 137.5%;
       text-decoration-line: underline;
+      margin-top: 7rem;
+      margin-right: 2rem;
     }
   }
 
 
 
 
+
+}
+
+.wait-feedback {
+  display: none !important;
 }
 
 .card-answerad-name-header {
