@@ -93,7 +93,6 @@ export class AppComponent implements AfterViewInit{
     subjectElements.forEach(function (subjectElement) {
       subjectElement.addEventListener('click', function (event) {
         event.preventDefault();
-        console.log('TESTANDO TESTANDO TESTANDO');
         const divAnswereds = subjectElement.nextElementSibling as HTMLElement;
 
         if (
