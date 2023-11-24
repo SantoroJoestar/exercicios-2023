@@ -177,11 +177,11 @@
         </div>
       </article>
 
-      <article class="panel" id="discussions">
+      <article class="panel" id="discussions" >
         <p class="panel-header">Discussões</p>
 
         <div class="panel-body">
-          <section class="topic">
+          <section *ngIf="showDiscussionSection" class="topic">
             <h3 class="topic-title primary">
               Compartilhe suas ideias ou dúvidas com os autores
             </h3>
@@ -211,7 +211,7 @@
             </div>
           </section>
 
-          <section id="form" style="display: none">
+          <section *ngIf="showFormSection" id="form">
             <h3 class="topic-title primary topic-text">
               Tem uma dúvida ou sugestão? Compartilhe seu feedaback com os
               autores!
@@ -234,7 +234,7 @@
                     <button
                       type="button"
                       class="button-topic"
-                      (click)="showTopicSendAndBlur()"
+                      (click)="showTopicSendAndBlurFunction()"
                     >
                       Enviar
                     </button>
@@ -247,7 +247,7 @@
             </div>
           </section>
 
-          <section id="topic-send">
+          <section *ngIf="showTopicSendAndBlur" id="topic-send" >
             <h3 class="topic-send-title">
               Seu tópico foi enviado com sucesso! :D
             </h3>
@@ -257,7 +257,7 @@
                 ao seu email assim que seu tópico for respondido!
               </p>
               <div class="topic-send-button">
-                <a class="btn-topic-new" (click)="showForm()">
+                <a class="btn-topic-new" (click)="createNewTopic()">
                 <span>Criar novo tópico</span>
               </a>
               </div>
@@ -269,8 +269,8 @@
               <img class="line" src="assets/line.svg" alt="linha de divisão" />
             </div>
           </section>
-          <section class="discussions">
-            <div id="blur">
+          <section class="discussions" >
+            <div *ngIf="showTopicSendAndBlur" id="blur">
               <img
                 src="assets/enviado.png"
                 alt="blur de enviado"
@@ -304,12 +304,12 @@
             </div>
             <br />
             <div class="answered-topics-questions"></div>
-            <div class="card answered-topic ops-topic-subject">
+            <div class="card answered-topic ops-topic-subject" (click)="toggleForm()">
               <div class="card-header">
                 <p class="card-title">Assunto da pergunta aparece aqui</p>
                 <p class="card-subtitle">Carlos Henrique Santos</p>
               </div>
-              <div class="card-body answered-topic ops-topic-subject" >
+              <div class="card-body answered-topic ops-topic-subject">
                 <p class="answered-topic" >
                   Comecinho da pergunta aparece aqui resente relato inscreve-se
                   no campo da análise da dimensão e impacto de processo
@@ -328,7 +328,7 @@
               </div>
             </div>
 
-            <div class="answered-topics-questions">
+            <div class="answered-topics-questions" *ngIf="showQuestions">
               <div class="card-answered answered-topic comments-container">
                 <p class="card-answered-name answered-topic comments-container">
                   Adriano da Silva

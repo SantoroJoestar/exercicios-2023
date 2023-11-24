@@ -489,6 +489,12 @@ input[type="text"] {
   margin-bottom: 1rem;
 }
 
+.textbox-container {
+  white-space: nowrap;  /* Evita que o conteúdo quebre para a próxima linha */
+  position: relative;   /* Torna as posições absolutas relativas a este contêiner */
+}
+
+
 .button-topic {
   position: absolute;
   width: 12.819rem;
@@ -499,9 +505,9 @@ input[type="text"] {
   color: #FFF;
   border: none;
   cursor: pointer;
-  bottom: 2.2rem;
-  right: 0;
-  margin-top: 0rem;
+  bottom: 0;
+  right: 0;  /* Alinha à extrema direita */
+  margin-top: 2rem;
 
   &:hover {
     background: #FEB154;
@@ -510,7 +516,6 @@ input[type="text"] {
 
 
 #topic-send {
-  display: none;
   flex-direction: column;
   gap: 1em;
 
@@ -566,10 +571,6 @@ input[type="text"] {
   font-family: 'Quicksand', 'sans-serif';
 }
 
-#blur {
-  display: none;
-}
-
 .blur{
   height: 12rem;
   width: 97.2rem;
@@ -577,10 +578,6 @@ input[type="text"] {
 }
 
 .blur p {
-  display: none;
-}
-
-.answered-topics-questions {
   display: none;
 }
 
